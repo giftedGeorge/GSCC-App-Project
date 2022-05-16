@@ -1,0 +1,16 @@
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\bin\Debug\net5.0\Scientific_Calculator_App.exe
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\bin\Debug\net5.0\Scientific_Calculator_App.deps.json
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\bin\Debug\net5.0\Scientific_Calculator_App.runtimeconfig.json
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\bin\Debug\net5.0\Scientific_Calculator_App.runtimeconfig.dev.json
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\bin\Debug\net5.0\Scientific_Calculator_App.dll
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\bin\Debug\net5.0\Scientific_Calculator_App.pdb
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\Scientific_Calculator_App.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\Scientific_Calculator_App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\Scientific_Calculator_App.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\Scientific_Calculator_App.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\Scientific_Calculator_App.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\Scientific_Calculator_App.dll
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\refint\Scientific_Calculator_App.dll
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\Scientific_Calculator_App.pdb
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\Scientific_Calculator_App.genruntimeconfig.cache
+C:\Users\LENOVO\Desktop\GIT\DWIT Internship\DWIT Console App project\Scientific_Calculator_App\Scientific_Calculator_App\obj\Debug\net5.0\ref\Scientific_Calculator_App.dll
