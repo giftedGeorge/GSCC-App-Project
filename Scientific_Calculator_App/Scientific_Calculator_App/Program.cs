@@ -6,7 +6,7 @@ namespace Scientific_Calculator_App
     {
         static void Main(string[] args)
         {
-            //Implementing initial Display Menu
+            //Implementing initial Display Menu.
             Console.WriteLine("***Welcome to George's Scientific calculator***\n\n" +
                 "What would you like to do?\n" +
                 "Please enter the numeric value of an option below to proceed\n" +
