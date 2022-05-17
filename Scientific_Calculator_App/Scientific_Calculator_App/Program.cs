@@ -15,7 +15,7 @@ namespace Scientific_Calculator_App
                 "3. Permutation\n" +
                 "4. Combination\n" +
                 "5. Logarithm\n" +
-                "6. View History");
+                "6. View History\n");
 
             Console.Write("Enter a numeric Value:");
             int menuChoice = Convert.ToInt32(Console.ReadLine());
