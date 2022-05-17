@@ -10,15 +10,12 @@ namespace Scientific_Calculator_App
             Console.WriteLine("***Welcome to George's Scientific calculator***\n\n" +
                 "What would you like to do?\n" +
                 "Please enter the numeric value of an option below to proceed\n" +
-                "1. Addition\n" +
-                "2. Subtraction\n" +
-                "3. Multiplication\n" +
-                "4. Division\n" +
-                "5. Exponent\n" +
-                "6. Trigonometry\n" +
-                "7. Permutation\n" +
-                "8. Combination\n" +
-                "9. Logarithm\n");
+                "1. Exponent\n" +
+                "2. Trigonometry\n" +
+                "3. Permutation\n" +
+                "4. Combination\n" +
+                "5. Logarithm\n" +
+                "6. View History");
 
             Console.Write("Enter a numeric Value:");
             int menuChoice = Convert.ToInt32(Console.ReadLine());
