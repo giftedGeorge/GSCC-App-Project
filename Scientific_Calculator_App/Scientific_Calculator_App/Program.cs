@@ -32,14 +32,24 @@ namespace Scientific_Calculator_App
                     double baseVal = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Enter Power value: ");
                     double powerVal = Convert.ToDouble(Console.ReadLine());
-                    double result = Math.Pow(baseVal, powerVal);
-                    Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
-                    Console.Write("Enter 1 to continue, 2 to exit: ");
-                    userChoice = Console.ReadLine();
+                    double result = Math.Pow(Math.Abs(baseVal), powerVal);
+                    if (powerVal < 0)
+                    {
+                        result = -result;
+                        Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                        Console.Write("Enter 1 to continue, or 2 to exit: ");
+                        userChoice = Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                        Console.Write("Enter 1 to continue, or 2 to exit: ");
+                        userChoice = Console.ReadLine();
+                    }
 
                     while (userChoice != "1" && userChoice != "2")
                     {
-                        Console.Write("Invalid entry! Please enter 1 to continue, 2 to exit: ");
+                        Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
                     }
                 }
