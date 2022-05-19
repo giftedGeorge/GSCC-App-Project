@@ -17,8 +17,34 @@ namespace Scientific_Calculator_App
                 "5. Logarithm\n" +
                 "6. View History\n");
 
-            Console.Write("Enter a numeric Value:");
-            int menuChoice = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter a numeric Value: ");
+            string menuChoice = Console.ReadLine();
+
+            //Implementing the exponent feature
+            if (menuChoice == "1")
+            {
+                Console.WriteLine("**You have selected Exponent**\n");
+                string userChoice = "1";
+
+                do
+                {
+                    Console.Write("Enter base value: ");
+                    double baseVal = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Enter Power value: ");
+                    double powerVal = Convert.ToDouble(Console.ReadLine());
+                    double result = Math.Pow(baseVal, powerVal);
+                    Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                    Console.Write("Enter 1 to continue, 2 to exit: ");
+                    userChoice = Console.ReadLine();
+
+                    while (userChoice != "1" && userChoice != "2")
+                    {
+                        Console.Write("Invalid entry! Please enter 1 to continue, 2 to exit: ");
+                        userChoice = Console.ReadLine();
+                    }
+                }
+                while (userChoice == "1");
+            }
         }
     }
 }
