@@ -4,9 +4,9 @@ using System.Numerics;
 namespace Scientific_Calculator_App
 {
     internal class Program
-    {
+    {        
         static void Main(string[] args)
-        {
+        {            
             //Implementing initial Display Menu.
             Console.WriteLine("***Welcome to George's Scientific calculator***\n\n" +
                 "What would you like to do?\n" +
@@ -38,20 +38,20 @@ namespace Scientific_Calculator_App
                     try
                     {
                         Console.Write("Enter base value: ");
-                        double baseVal = Convert.ToDouble(Console.ReadLine());
+                        double baseVal = GeneralMethods.collectDoubleInput();
                         Console.Write("Enter Power value: ");
-                        double powerVal = Convert.ToDouble(Console.ReadLine());
+                        double powerVal = GeneralMethods.collectDoubleInput();
                         double result = Math.Pow(Math.Abs(baseVal), powerVal);
                         if ((powerVal % 2) != 0)
                         {
                             result = -result;
-                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n Do another?\n 1. Yes\n 2. No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
                         }
                         else
                         {
-                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n Do another?\n 1. Yes\n 2. No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
                         }
@@ -74,11 +74,11 @@ namespace Scientific_Calculator_App
                     try
                     {
                         Console.Write("Enter the value of n: ");
-                        int nValue = int.Parse(Console.ReadLine());
+                        int nValue = GeneralMethods.collectIntegerInput();
                         Console.Write("Enter the value of r: ");
-                        int rValue = int.Parse(Console.ReadLine());
+                        int rValue = GeneralMethods.collectIntegerInput();
                         var result = PermutationAndCombination.NPr(nValue, rValue);
-                        Console.WriteLine($"{nValue}P{rValue} = {result}" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                        Console.WriteLine($"{nValue}P{rValue} = {result}\n Do another?\n 1. Yes\n 2. No\n");
                         Console.Write("Enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
                     }
