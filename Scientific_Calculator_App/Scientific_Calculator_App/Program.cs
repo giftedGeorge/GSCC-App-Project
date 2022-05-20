@@ -45,13 +45,13 @@ namespace Scientific_Calculator_App
                         if ((powerVal % 2) != 0)
                         {
                             result = -result;
-                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n Do another?\n 1. Yes\n 2. No\n");
+                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
                         }
                         else
                         {
-                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n Do another?\n 1. Yes\n 2. No\n");
+                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
                         }
@@ -78,7 +78,7 @@ namespace Scientific_Calculator_App
                         Console.Write("Enter the value of r: ");
                         int rValue = GeneralMethods.collectIntegerInput();
                         var result = PermutationAndCombination.NPr(nValue, rValue);
-                        Console.WriteLine($"{nValue}P{rValue} = {result}\n Do another?\n 1. Yes\n 2. No\n");
+                        Console.WriteLine($"{nValue}P{rValue} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                         Console.Write("Enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
                     }
