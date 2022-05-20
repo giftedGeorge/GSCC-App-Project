@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace Scientific_Calculator_App
 {
@@ -21,40 +22,73 @@ namespace Scientific_Calculator_App
             string menuChoice = Console.ReadLine();
 
             //Implementing the exponent feature
+            string userChoice = "1";
+            while (userChoice != "1" && userChoice != "2")
+            {
+                Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
+                userChoice = Console.ReadLine();
+            }
+
             if (menuChoice == "1")
             {
-                Console.WriteLine("**You have selected Exponent**\n");
-                string userChoice = "1";
+                Console.WriteLine("**You have selected Exponent**\n");                
 
                 do
                 {
-                    Console.Write("Enter base value: ");
-                    double baseVal = Convert.ToDouble(Console.ReadLine());
-                    Console.Write("Enter Power value: ");
-                    double powerVal = Convert.ToDouble(Console.ReadLine());
-                    double result = Math.Pow(Math.Abs(baseVal), powerVal);
-                    if (powerVal < 0)
+                    try
                     {
-                        result = -result;
-                        Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
-                        Console.Write("Enter 1 to continue, or 2 to exit: ");
-                        userChoice = Console.ReadLine();
+                        Console.Write("Enter base value: ");
+                        double baseVal = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("Enter Power value: ");
+                        double powerVal = Convert.ToDouble(Console.ReadLine());
+                        double result = Math.Pow(Math.Abs(baseVal), powerVal);
+                        if ((powerVal % 2) != 0)
+                        {
+                            result = -result;
+                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                            Console.Write("Enter 1 to continue, or 2 to exit: ");
+                            userChoice = Console.ReadLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                            Console.Write("Enter 1 to continue, or 2 to exit: ");
+                            userChoice = Console.ReadLine();
+                        }
                     }
-                    else
+                    catch (Exception)
                     {
-                        Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\n" + "Do another?\n" + "1. Yes\n" + "2. No\n");
-                        Console.Write("Enter 1 to continue, or 2 to exit: ");
-                        userChoice = Console.ReadLine();
+                        Console.WriteLine("Error! Please enter a valid number value\n");
                     }
+                }                
+                while (userChoice == "1");
+            }
 
-                    while (userChoice != "1" && userChoice != "2")
+            //Implementing the Permutation feature
+            else if (menuChoice == "3")
+            {
+                Console.WriteLine("**You have selected Permutation**\n");
+
+                do
+                {
+                    try
                     {
-                        Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
+                        Console.Write("Enter the value of n: ");
+                        int nValue = int.Parse(Console.ReadLine());
+                        Console.Write("Enter the value of r: ");
+                        int rValue = int.Parse(Console.ReadLine());
+                        var result = PermutationAndCombination.NPr(nValue, rValue);
+                        Console.WriteLine($"{nValue}P{rValue} = {result}" + "Do another?\n" + "1. Yes\n" + "2. No\n");
+                        Console.Write("Enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Error! Please enter a valid integer value\n");
                     }
                 }
                 while (userChoice == "1");
-            }
+            }                                                  
         }
     }
 }
