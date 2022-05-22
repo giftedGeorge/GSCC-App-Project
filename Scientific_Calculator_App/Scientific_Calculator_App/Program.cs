@@ -88,7 +88,34 @@ namespace Scientific_Calculator_App
                     }
                 }
                 while (userChoice == "1");
-            }                                                  
+            }
+
+            //Implementing the Combination feature
+            else if (menuChoice == "4")
+            {
+                Console.WriteLine("**You have selected Combination**\n");
+
+                do
+                {
+                    try
+                    {
+                        Console.Write("Enter the value of n: ");
+                        int nValue = GeneralMethods.collectIntegerInput();
+                        Console.Write("Enter the value of r: ");
+                        int rValue = GeneralMethods.collectIntegerInput();
+                        var result = PermutationAndCombination.NCr(nValue, rValue);
+                        Console.WriteLine($"{nValue}C{rValue} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
+                        Console.Write("Enter 1 to continue, or 2 to exit: ");
+                        userChoice = Console.ReadLine();
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Error! Please enter a valid integer value\n");
+                    }
+                }
+                while (userChoice == "1");
+            }
+
         }
     }
 }
