@@ -9,11 +9,19 @@ namespace Scientific_Calculator_App
 {
     public static class PermutationAndCombination
     {
+        //Combination function
+        public static BigInteger NCr(int n, int r)
+        {
+            return (Factorial(n) / (Factorial(r) * Factorial((n - r))));
+        }
+
+        //Permutation function
         public static BigInteger NPr(int n, int r)
         {
             return (Factorial(n) / Factorial((n - r)));
         }
 
+        //Factorial function
         private static BigInteger Factorial(int num)
         {
             BigInteger factorial = 1;

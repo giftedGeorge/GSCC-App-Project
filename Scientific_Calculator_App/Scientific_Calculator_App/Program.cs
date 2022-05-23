@@ -23,26 +23,19 @@ namespace Scientific_Calculator_App
 
             //Implementing the exponent feature
             string userChoice = "1";
-            while (userChoice != "1" && userChoice != "2")
-            {
-                Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
-                userChoice = Console.ReadLine();
-            }
-
+            
             if (menuChoice == "1")
             {
                 Console.WriteLine("**You have selected Exponent**\n");                
 
                 do
                 {
-                    try
-                    {
                         Console.Write("Enter base value: ");
                         double baseVal = GeneralMethods.collectDoubleInput();
                         Console.Write("Enter Power value: ");
                         double powerVal = GeneralMethods.collectDoubleInput();
                         double result = Math.Pow(Math.Abs(baseVal), powerVal);
-                        if ((powerVal % 2) != 0)
+                        if (((powerVal % 2) != 0) && baseVal < 0)
                         {
                             result = -result;
                             Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
@@ -55,12 +48,14 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
                         }
-                    }
-                    catch (Exception)
+
+                    while (userChoice != "1" && userChoice != "2")
                     {
-                        Console.WriteLine("Error! Please enter a valid number value\n");
+                        Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
+                        userChoice = Console.ReadLine();
                     }
-                }                
+
+                }
                 while (userChoice == "1");
             }
 
@@ -71,8 +66,6 @@ namespace Scientific_Calculator_App
 
                 do
                 {
-                    try
-                    {
                         Console.Write("Enter the value of n: ");
                         int nValue = GeneralMethods.collectIntegerInput();
                         Console.Write("Enter the value of r: ");
@@ -81,11 +74,13 @@ namespace Scientific_Calculator_App
                         Console.WriteLine($"{nValue}P{rValue} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                         Console.Write("Enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
-                    }
-                    catch (Exception)
+                   
+                    while (userChoice != "1" && userChoice != "2")
                     {
-                        Console.WriteLine("Error! Please enter a valid integer value\n");
+                        Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
+                        userChoice = Console.ReadLine();
                     }
+
                 }
                 while (userChoice == "1");
             }
@@ -97,8 +92,6 @@ namespace Scientific_Calculator_App
 
                 do
                 {
-                    try
-                    {
                         Console.Write("Enter the value of n: ");
                         int nValue = GeneralMethods.collectIntegerInput();
                         Console.Write("Enter the value of r: ");
@@ -107,11 +100,13 @@ namespace Scientific_Calculator_App
                         Console.WriteLine($"{nValue}C{rValue} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                         Console.Write("Enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
-                    }
-                    catch (Exception)
+                   
+                    while (userChoice != "1" && userChoice != "2")
                     {
-                        Console.WriteLine("Error! Please enter a valid integer value\n");
+                        Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
+                        userChoice = Console.ReadLine();
                     }
+
                 }
                 while (userChoice == "1");
             }
