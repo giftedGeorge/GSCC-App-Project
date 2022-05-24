@@ -111,6 +111,29 @@ namespace Scientific_Calculator_App
                 while (userChoice == "1");
             }
 
+            //Implementing the Logarithm feature
+            else if (menuChoice == "5")
+            {
+                Console.WriteLine("**You have selected Logarithm**\n");
+
+                do
+                {
+                    Console.Write("Enter value in base 10: ");
+                    double numValue = GeneralMethods.collectDoubleInput();
+                    var result = Math.Log(numValue, 10);
+                    Console.WriteLine($"log {numValue} = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
+                    userChoice = Console.ReadLine();
+
+                    while (userChoice != "1" && userChoice != "2")
+                    {
+                        Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
+                        userChoice = Console.ReadLine();
+                    }
+
+                }
+                while (userChoice == "1");
+            }
+
         }
     }
 }
