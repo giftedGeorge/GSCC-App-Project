@@ -119,9 +119,9 @@ namespace Scientific_Calculator_App
                 do
                 {
                     Console.Write("Enter value in base 10: ");
-                    double logValue = GeneralMethods.collectDoubleInput();
-                    var result = Math.Log(logValue, 10);
-                    Console.WriteLine($"log {logValue} = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
+                    double numValue = GeneralMethods.collectDoubleInput();
+                    var result = Math.Log(numValue, 10);
+                    Console.WriteLine($"log {numValue} = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
                     userChoice = Console.ReadLine();
 
                     while (userChoice != "1" && userChoice != "2")
