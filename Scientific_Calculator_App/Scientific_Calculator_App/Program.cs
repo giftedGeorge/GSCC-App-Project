@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Numerics;
 
 namespace Scientific_Calculator_App
@@ -19,13 +20,13 @@ namespace Scientific_Calculator_App
                 "6. View History\n");
 
             Console.Write("Enter a numeric Value: ");
-            string menuChoice1 = Console.ReadLine();
-            string menuChoice2 = "";
-            string menuChoice3 = "";
-
+            string menuChoice1 = Console.ReadLine(); //for the main menu feature
+            string menuChoice2; //for the trigonometry feature
+            string menuChoice3; //for the trigonometry feature
+            string userChoice; //will be used to take in the user input in the "Do another" menu which will pop up after every calculation.
+            ArrayList userHistory = new(); //for the user history feature            
+            
             //Implementing the exponent feature
-            string userChoice = "1";
-
             if (menuChoice1 == "1")
             {
                 Console.WriteLine("**You have selected Exponent**\n");
@@ -40,12 +41,14 @@ namespace Scientific_Calculator_App
                     if (((powerVal % 2) != 0) && baseVal < 0)
                     {
                         result = -result;
+                        userHistory.Add($"Exponent  |  {baseVal}^{powerVal} = {result}  |  {DateTime.Now}");
                         Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                         Console.Write("Enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
                     }
                     else
                     {
+                        userHistory.Add($"Exponent  |  {baseVal}^{powerVal} = {result}  |  {DateTime.Now}");
                         Console.WriteLine($"{baseVal} to the power of {powerVal} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                         Console.Write("Enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
@@ -83,6 +86,7 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the value of the angle in degrees: ");
                             double angleValue = GeneralMethods.collectDoubleInput();
                             double result = Math.Sin(GeneralMethods.DegreesToRadians(angleValue));
+                            userHistory.Add($"Trig (Sin of a known angle)  |  Sin{angleValue} = {result}  |  {DateTime.Now}");
                             Console.WriteLine($"Sin{angleValue} Degrees = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
@@ -107,6 +111,7 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the value of the Hypotenuse side: ");
                             double hypValue = GeneralMethods.collectDoubleInput();
                             double result = GeneralMethods.RadiansToDegrees(Math.Asin(oppValue / hypValue));
+                            userHistory.Add($"Trig (Sin of an unknown angle)  |  Sin-1({oppValue}/{hypValue}) = {result}  |  {DateTime.Now}");
                             Console.WriteLine($"The unknown angle is {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
@@ -129,7 +134,8 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the number value: ");
                             double numValue = GeneralMethods.collectDoubleInput();
                             double result = GeneralMethods.RadiansToDegrees(Math.Asin(numValue));
-                            Console.WriteLine($"Sin-1 {numValue} = {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
+                            userHistory.Add($"Trig (Sin-1 of a value)  |  Sin-1({numValue}) = {result}  |  {DateTime.Now}");
+                            Console.WriteLine($"Sin-1({numValue}) = {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
 
@@ -164,7 +170,8 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the value of the angle in degrees: ");
                             double angleValue = GeneralMethods.collectDoubleInput();
                             double result = Math.Cos(GeneralMethods.DegreesToRadians(angleValue));
-                            Console.WriteLine($"Cos{angleValue} Degrees = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
+                            userHistory.Add($"Trig (Cos of a known angle)  |  Cos({angleValue}) = {result}  |  {DateTime.Now}");
+                            Console.WriteLine($"Cos({angleValue}) Degrees = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
 
@@ -188,6 +195,7 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the value of the Hypotenuse side: ");
                             double hypValue = GeneralMethods.collectDoubleInput();
                             double result = GeneralMethods.RadiansToDegrees(Math.Acos(adjValue / hypValue));
+                            userHistory.Add($"Trig (Cos of an unknown angle)  |  Cos-1({adjValue}/{hypValue}) = {result}  |  {DateTime.Now}");
                             Console.WriteLine($"The unknown angle is {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
@@ -210,7 +218,8 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the number value: ");
                             double numValue = GeneralMethods.collectDoubleInput();
                             double result = GeneralMethods.RadiansToDegrees(Math.Acos(numValue));
-                            Console.WriteLine($"Cos-1 {numValue} = {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
+                            userHistory.Add($"Trig (Cos-1 of a value)  |  Cos-1({numValue}) = {result}  |  {DateTime.Now}");
+                            Console.WriteLine($"Cos-1({numValue}) = {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
 
@@ -245,7 +254,8 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the value of the angle in degrees: ");
                             double angleValue = GeneralMethods.collectDoubleInput();
                             double result = Math.Tan(GeneralMethods.DegreesToRadians(angleValue));
-                            Console.WriteLine($"Tan{angleValue} Degrees = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
+                            userHistory.Add($"Trig (Tan of a known angle)  |  Tan({angleValue}) = {result}  |  {DateTime.Now}");
+                            Console.WriteLine($"Tan({angleValue}) Degrees = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
 
@@ -269,6 +279,7 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the value of the Adjacent side: ");
                             double adjValue = GeneralMethods.collectDoubleInput();
                             double result = GeneralMethods.RadiansToDegrees(Math.Atan((oppValue / adjValue)));
+                            userHistory.Add($"Trig (Tan of an unknown angle)  |  Tan-1({oppValue}/{adjValue}) = {result}  |  {DateTime.Now}");
                             Console.WriteLine($"The unknown angle is {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
@@ -291,7 +302,8 @@ namespace Scientific_Calculator_App
                             Console.Write("Enter the number value: ");
                             double numValue = GeneralMethods.collectDoubleInput();
                             double result = GeneralMethods.RadiansToDegrees(Math.Atan(numValue));
-                            Console.WriteLine($"Tan-1 {numValue} = {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
+                            userHistory.Add($"Trig (Tan-1 of a value)  |  Tan-1({numValue}) = {result}  |  {DateTime.Now}");
+                            Console.WriteLine($"Tan-1({numValue}) = {result} Degrees\n\nDo another ?\n 1.Yes\n 2.No\n");
                             Console.Write("Enter 1 to continue, or 2 to exit: ");
                             userChoice = Console.ReadLine();
 
@@ -323,7 +335,8 @@ namespace Scientific_Calculator_App
                     Console.Write("Enter the value of r: ");
                     int rValue = GeneralMethods.collectIntegerInput();
                     var result = PermutationAndCombination.NPr(nValue, rValue);
-                    Console.WriteLine($"{nValue}P{rValue} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
+                    userHistory.Add($"Permutation  |  ({nValue})P({rValue}) = {result}  |  {DateTime.Now}");
+                    Console.WriteLine($"({nValue})P({rValue}) = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                     Console.Write("Enter 1 to continue, or 2 to exit: ");
                     userChoice = Console.ReadLine();
 
@@ -349,7 +362,8 @@ namespace Scientific_Calculator_App
                     Console.Write("Enter the value of r: ");
                     int rValue = GeneralMethods.collectIntegerInput();
                     var result = PermutationAndCombination.NCr(nValue, rValue);
-                    Console.WriteLine($"{nValue}C{rValue} = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
+                    userHistory.Add($"Combination  |  ({nValue})C({rValue}) = {result}  |  {DateTime.Now}");
+                    Console.WriteLine($"({nValue})C({rValue}) = {result}\n\nDo another?\n 1. Yes\n 2. No\n");
                     Console.Write("Enter 1 to continue, or 2 to exit: ");
                     userChoice = Console.ReadLine();
 
@@ -373,7 +387,8 @@ namespace Scientific_Calculator_App
                     Console.Write("Enter value in base 10: ");
                     double numValue = GeneralMethods.collectDoubleInput();
                     var result = Math.Log(numValue, 10);
-                    Console.WriteLine($"log {numValue} = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
+                    userHistory.Add($"Logarithm  |  Log({numValue}) = {result}  |  {DateTime.Now}");
+                    Console.WriteLine($"log({numValue}) = {result}\n\nDo another ?\n 1.Yes\n 2.No\n");
                     Console.Write("Enter 1 to continue, or 2 to exit: ");
                     userChoice = Console.ReadLine();
 
@@ -385,8 +400,7 @@ namespace Scientific_Calculator_App
 
                 }
                 while (userChoice == "1");
-            }           
-
+            }
         }
     }
 }
