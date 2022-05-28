@@ -59,7 +59,6 @@ namespace Scientific_Calculator_App
                         Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
                     }
-
                 }
                 while (userChoice == "1");
             }
@@ -345,7 +344,6 @@ namespace Scientific_Calculator_App
                         Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
                     }
-
                 }
                 while (userChoice == "1");
             }
@@ -372,7 +370,6 @@ namespace Scientific_Calculator_App
                         Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
                     }
-
                 }
                 while (userChoice == "1");
             }
@@ -397,7 +394,6 @@ namespace Scientific_Calculator_App
                         Console.Write("Invalid entry! Please enter 1 to continue, or 2 to exit: ");
                         userChoice = Console.ReadLine();
                     }
-
                 }
                 while (userChoice == "1");
             }
