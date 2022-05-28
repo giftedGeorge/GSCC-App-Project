@@ -8,17 +8,17 @@ namespace Scientific_Calculator_App
 {
     internal class GeneralMethods
     {
-        public static int collectIntegerInput()
+        public static int CollectIntegerInput()
         {
-            int intValue = 0;
+            int intValue;
             while (!int.TryParse(Console.ReadLine(), out intValue))
                 Console.WriteLine("Error! Please enter a valid integer value");
             return intValue;
         }
 
-        public static double collectDoubleInput()
+        public static double CollectDoubleInput()
         {
-            double doubleValue = 0;
+            double doubleValue;
             while (!double.TryParse(Console.ReadLine(), out doubleValue))
                 Console.WriteLine("Error! Please enter a valid number value");
             return doubleValue;
