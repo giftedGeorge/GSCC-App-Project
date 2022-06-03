@@ -69,7 +69,7 @@ namespace Scientific_Calculator_App
                 }
 
                 //Implementing the Trigonometry feature
-                else if (menuChoice1 == "2")
+                else if (menuChoice1 == "2") //Case for Main menu option 2
                 {
                     do //do-while loop to execute the trig feature while userChoice is 4.
                     {
@@ -373,8 +373,7 @@ namespace Scientific_Calculator_App
                         }
                     }
                     while(userChoice == "4");
-                }
-                    
+                }                    
 
                 //Implementing the Permutation feature
                 else if (menuChoice1 == "3") //Case for Main menu option 3 
